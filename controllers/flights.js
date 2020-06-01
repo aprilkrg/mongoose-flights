@@ -25,11 +25,8 @@ function newFlight(req, res) {
 
 function create(req, res) {
   const flight = new Flight(req.body);
-  console.log(req.body,'REQ BODY WHAT R U');
   flight.save(function(err) {
     if (err) return res.redirect('/flights/new');
-    console.log(flight);
     res.redirect('/flights');
   });
-  //console.log('whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
 }
